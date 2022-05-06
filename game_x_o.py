@@ -1,3 +1,14 @@
+def describe():
+    print(                          )
+    print({"     Приветствие!!!   "})
+    print({"---------игра---------"})
+    print({"    КРЕСТИКИ-НОЛИКИ   "})
+    print({"----------------------"})
+    print({" для совершения хода  "})
+    print({"введите две координаты"})
+    print({" через пробел {X} {Y} "})
+    print({"----------------------"})
+
 def draw_board():
     print()
     print()
@@ -15,7 +26,7 @@ def enter():
 
         if len(value) != 2:
             print()
-            print(" введите две координаты !!! ")
+            print(" некорректный ввод, введите две координаты !!! ")
             continue
 
         x, y = value
@@ -29,7 +40,7 @@ def enter():
 
         if 0 > x or x > 2 or 0 > y or y > 2:
             print()
-            print(" ошибочный ввод координаты от 0 до 2 !!! ")
+            print(" некорректный ввод координаты от 0 до 2 !!! ")
             continue
 
         if board[x][y] != " ":
@@ -76,7 +87,7 @@ def check_win():
 
     return False
 
-
+describe()
 board = [[" "] * 3 for i in range(3)]
 token = 0
 
@@ -100,7 +111,9 @@ while True:
 
     if check_win():
         draw_board()
-        print("  you win!!!")
+        print("  ПОБЕДА!!!")
+        print(" конец игры ")
+        print("сыграйте еще)))")
         break
 
     if token == 10:
